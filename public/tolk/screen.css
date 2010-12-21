@@ -143,6 +143,10 @@ ul.locales li {
    padding: 5px 10px;*/
 }
 
+ul.locales li.locked {
+  color: #666;
+}
+
 ul.locales ul.primary-keys li {
   width: 140px;
   display: block;
@@ -176,7 +180,12 @@ ul.locales span.missing_translations {
   display: inline-block;
 }
 
-ul.primary-keys span.missing_translations {
+ul.locales li.locked span.missing_translations {
+  background: #999;
+}
+
+ul.primary-keys span.missing_translations,
+li.locked ul.primary-keys span.missing_translations {
   background: #ccc;
 }
 
