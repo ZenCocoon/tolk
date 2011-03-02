@@ -7,7 +7,8 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <%= stylesheet_link_tag "/tolk/stylesheets/reset",
-                            "/tolk/stylesheets/screen" %>
+                            "/tolk/stylesheets/screen",
+                            :cache => 'tolk' %>
     <%= yield :head %>
     <%= csrf_meta_tag %>
   </head>
@@ -15,6 +16,7 @@
     <div id="container">
       <header>
         <h1><span class="home"><%= link_to "Tolk", tolk_root_path %></span><% if @locale.present? %><span class="locale"><%= link_to @locale.language_name, tolk_locale_path(@locale) %></span><% end %></h1>
+        <p class="logout"><%= link_to 'Logout →', destroy_translator_session_url %></p>
       </header>
       <%= yield %>
     </div>
@@ -23,7 +25,8 @@
     <% else %>
       <%= javascript_include_tag '/tolk/javascripts/prototype',
                                  '/tolk/javascripts/rails',
-                                 '/tolk/javascripts/application' %>
+                                 '/tolk/javascripts/application',
+                                 :cache => 'tolk' %>
     <% end %>
   </body>
 </html>
