@@ -25,7 +25,7 @@ module Tolk
       'id'    => 'Indonesian',
       'is'    => 'Icelandic',
       'it'    => 'Italian',
-      'jp'    => 'Japanese',
+      'ja'    => 'Japanese',
       'ko'    => 'Korean',
       'lo'    => 'Lao',
       'lt'    => 'Lithuanian',
@@ -34,8 +34,8 @@ module Tolk
       'nl'    => 'Dutch',
       'no'    => 'Norwegian',
       'pl'    => 'Polish',
-      'pt-BR' => 'Portuguese (Brazilian)',
-      'pt-PT' => 'Portuguese (Portugal)',
+      'pt-br' => 'Portuguese (Brazilian)',
+      'pt-pt' => 'Portuguese (Portugal)',
       'ro'    => 'Romanian',
       'ru'    => 'Russian',
       'se'    => 'Swedish',
@@ -47,7 +47,8 @@ module Tolk
       'tr'    => 'Turkish',
       'uk'    => 'Ukrainian',
       'vi'    => 'Vietnamese',
-      'zh'    => 'Chinese'
+      'zh-cn' => 'Chinese (Simplified)',
+      'zh-tw' => 'Chinese (Traditional)'
     }
 
     has_many :phrases, :through => :translations, :class_name => 'Tolk::Phrase'
