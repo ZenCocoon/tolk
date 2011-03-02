@@ -1,5 +1,18 @@
 Tolk is a Rails 3 engine designed to facilitate the translators doing the dirty work of translating your application to other languages.
 
+* Requirements
+
+This branch requires a current_translator. Based on the current_translator, authorization will be made to only allow authorized translators to make updates on a specific locale.
+
+  # Authorized to edit all locales and to add new ones
+  Translator.new(:locales => ["all"])
+  
+  # Authorized to edit French and German
+  Translator.new(:locales => ["fr", "de"])
+
+
+For a branch without authorization, check https://github.com/ZenCocoon/tolk/tree/rails3 (no extra features) or https://github.com/ZenCocoon/tolk/tree/scope_key (allow to search and scope by keys)
+
 * Installation & Setup
 
 To install add the following to your Gemfile:
