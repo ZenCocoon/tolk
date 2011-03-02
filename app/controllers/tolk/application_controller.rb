@@ -19,6 +19,10 @@ module Tolk
     def authorized_for_locale?(locale = @locale)
       current_translator.locales && (current_translator.locales.include?('all') || current_translator.locales.include?(locale.name.to_s))
     end
+    
+    def ensure_authorized_for_locale
+      redirect_to request.referrer unless authorized_for_locale?
+    end
 
     def ensure_authorized_to_create_locale?
       redirect_to tolk_locales_path unless authorize_to_create_locale?
