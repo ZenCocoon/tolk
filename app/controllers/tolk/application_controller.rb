@@ -9,7 +9,9 @@ module Tolk
     helper_method :authorized_for_locale?, :authorize_to_create_locale?
 
     def authenticate
-      self.authenticator.bind(self).call if self.authenticator && self.authenticator.respond_to?(:call)
+      authenticate_translator!
+      # FIXME: Why this doesn't work? Loading order ?
+      # self.authenticator.bind(self).call if self.authenticator && self.authenticator.respond_to?(:call)
     end
 
     def ensure_no_primary_locale
